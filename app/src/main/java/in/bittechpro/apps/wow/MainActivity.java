@@ -70,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(tabIcons[0]);
         Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(tabIcons[1]);
         Objects.requireNonNull(tabLayout.getTabAt(2)).setIcon(tabIcons[2]);
-        Objects.requireNonNull(tabLayout.getTabAt(3)).setIcon(tabIcons[3]);
+        if (sharedpreferences.getString(SPrefManager.ROLE, "1").equals("2")) {
+            Objects.requireNonNull(tabLayout.getTabAt(3)).setIcon(tabIcons[3]);
+        }
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -78,7 +81,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new RewardFragment(), "PROFILE");
         adapter.addFrag(new MapFragment(), "FIND DEVICE");
         adapter.addFrag(new ExchangeFragment(),"EXCHANGE");
-        adapter.addFrag(new CorporateFragment(),"CORPORATE");
+        if (sharedpreferences.getString(SPrefManager.ROLE, "1").equals("2")) {
+            adapter.addFrag(new CorporateFragment(), "CORPORATE");
+        }
         viewPager.setAdapter(adapter);
     }
 

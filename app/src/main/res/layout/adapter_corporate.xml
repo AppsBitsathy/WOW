@@ -36,7 +36,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/imageView7"
-            android:fontFamily="@font/cabin_sketch"
-            android:text="TextView" />
+            android:fontFamily="@font/cabin"
+            android:text="TextView"
+            android:textSize="18sp" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

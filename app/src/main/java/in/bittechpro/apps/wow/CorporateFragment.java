@@ -82,6 +82,8 @@ public class CorporateFragment extends Fragment {
                                     String[] longi = new String[total];
                                     int[] full_cap= new int[total];
                                     int[] cur_cap = new int[total];
+                                    double[] capacity = new double[total];
+
 
                                     JSONArray res_m_name = result.getJSONArray("m_name");
                                     JSONArray res_m_id = result.getJSONArray("m_id");
@@ -100,9 +102,14 @@ public class CorporateFragment extends Fragment {
                                         full_cap[r] = (int)res_full_cap.get(r);
                                         cur_cap[r] = (int)res_cur_cap.get(r);
 
+                                        capacity[r]  = ((double) cur_cap[r] / (double)full_cap[r]) * 100;
+
+                                        Log.d("ooooo", capacity[r] + "="+cur_cap[r]+"/"+full_cap[r]);
+
+
                                     }
 
-                                    listView.setAdapter(new CorporateListAdapter(getActivity(),m_name,cur_cap));
+                                    listView.setAdapter(new CorporateListAdapter(getActivity(),m_name,full_cap,cur_cap,capacity));
                                     Snackbar.make(view, "ok", Snackbar.LENGTH_LONG);
                                 }
                             }
