@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExchangeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/txt_exchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/stoke_light"
+        android:text="Exchange your Rewards !"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/ex_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_exchange"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/black_ops_one"
+        android:text="00"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ex_count"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="-3dp"
+        android:layout_toEndOf="@+id/ex_count"
+        android:adjustViewBounds="true"
+        android:src="@drawable/coin" />
+
+    <GridView
+        android:id="@+id/exchange_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ex_count"
+        android:layout_marginTop="30dp"
+        android:numColumns="3" />
+
+</RelativeLayout>
