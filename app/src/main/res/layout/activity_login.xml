@@ -33,93 +33,85 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:alpha=".7"
+        android:background="@drawable/bg"
         android:gravity="center"
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardView"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="3dp">
+            android:background="#e1ffffff"
+            android:fadeScrollbars="false">
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fadeScrollbars="false">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wow_logo" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical">
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="20dp"
-                        android:adjustViewBounds="true"
-                        app:srcCompat="@drawable/wow_logo" />
-
-                    <LinearLayout
+                    <Button
+                        android:id="@+id/btn_register"
+                        style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:elevation="3dp"
+                        android:focusable="true"
+                        android:fontFamily="@font/cabin"
+                        android:foreground="?selectableItemBackground"
+                        android:text="New User"
+                        android:textAlignment="center" />
 
-                        <Button
-                            android:id="@+id/btn_register"
-                            style="@style/Widget.AppCompat.Button.Colored"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:clickable="true"
-                            android:elevation="3dp"
-                            android:focusable="true"
-                            android:fontFamily="@font/cabin"
-                            android:foreground="?selectableItemBackground"
-                            android:text="New User"
-                            android:textAlignment="center" />
-
-                        <Button
-                            android:id="@+id/btn_login"
-                            style="@style/Widget.AppCompat.Button.Colored"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:clickable="true"
-                            android:elevation="5dp"
-                            android:focusable="true"
-                            android:fontFamily="@font/cabin"
-                            android:foreground="?selectableItemBackground"
-                            android:text="Login"
-                            android:textAlignment="center" />
-
-                    </LinearLayout>
-
-                    <FrameLayout
-                        android:id="@+id/content_frame"
+                    <Button
+                        android:id="@+id/btn_login"
+                        style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1">
-
-                    </FrameLayout>
-
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:elevation="5dp"
+                        android:focusable="true"
+                        android:fontFamily="@font/cabin"
+                        android:foreground="?selectableItemBackground"
+                        android:text="Login"
+                        android:textAlignment="center" />
 
                 </LinearLayout>
 
-            </ScrollView>
+                <FrameLayout
+                    android:id="@+id/content_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1">
 
-        </android.support.v7.widget.CardView>
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
 
 
     </RelativeLayout>

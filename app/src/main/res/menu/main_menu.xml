@@ -8,6 +8,9 @@
         android:orderInCategory="100"
 
         android:title="Logout" />
+    <item
+        android:id="@+id/refresh"
+        android:title="Refresh" />
 
 
 </menu>

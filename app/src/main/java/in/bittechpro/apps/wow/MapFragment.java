@@ -337,6 +337,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             ActivityCompat.requestPermissions( getActivity(), listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), 100);
             return false;
         }
+
         return true;
     }
 
@@ -441,6 +442,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onLocationChanged(Location location) {
         lastLocation = location;
         googleMap.clear();
+
+        getMachine();
         if(currentUserLocationMarker != null){
             currentUserLocationMarker.remove();
         }
@@ -461,6 +464,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         googleMap.moveCamera(yourLocation);
         // googleMap.moveCamera(CameraUpdateFactory.newLatLng(coordinate));
         googleMap.animateCamera(zoom);
+
         // googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         //  googleMap.animateCamera(CameraUpdateFactory.zoomBy(11));
         if(googleApiClient!= null) {
@@ -468,7 +472,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient,this);
         }
 
-            getMachine();
+
 
 
 
